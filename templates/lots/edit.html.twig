@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modfier Lots{% endblock %}
+
+{% block body %}
+    <h1>Modifier lots</h1>
+
+    {{ include('lots/_form.html.twig', {'button_label': 'Enregistrer modifications'}) }}
+
+{% endblock %}

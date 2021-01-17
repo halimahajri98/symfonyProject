@@ -1,0 +1,36 @@
+# # # easy_admin:
+# # #    entities:
+# # #        List the entity class name you want to manage
+# # #        - App\Entity\Lots
+# # #        - App\Entity\Services
+# # #        - App\Entity\Amenagement
+# # #        - App\Entity\User
+
+# easy_admin:
+#     site_name: 'Amenagement-Lots'
+#     entities:
+#         Lots:
+#             class: App\Entity\Lots
+#         Services:
+#             class: App\Entity\Services  
+#         Amenagement:
+#             class: App\Entity\amenagement
+#             # form:
+#             #     fields:
+#             #         - {type: 'group',icon: 'pencil',label: 'ajouter '}
+#             #         - lots
+#             #         - services
+#             #         - dateAmenagement
+#             #         # - { property: 'type', type: 'choice', type_options: { choices: { 'Cours': 'cours', 'Exercice': 'exercice', 'Devoir': 'examen' } } }
+#             #         # - { property: 'contractFile', type: 'vich_file' , label: 'Choisir le fichier' }
+#             #         # - { property: 'path', template: 'contract.html.twig', base_path: '%app.path.user_contracts%'}
+#         User:
+#             class: App\Entity\User
+        
+
+        
+# #         # List the entity class name you want to manage
+# #         #- App\Entity\Section
+# #         #- App\Entity\Matiere
+# #         #- App\Entity\Ressource
+# #         #- App\Entity\User

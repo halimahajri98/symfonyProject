@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Liste amenagement
+{% endblock %}
+
+{% block body %}
+    <div class="example-wrapper"><h1>Liste amenagement</h1></div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Lots</th>
+                <th>Services</th>
+                <th>DateAmenagement</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+        {% for amenagement in amenagements %}
+            <tr>
+                <td>{{ amenagement.id }}</td>
+                <td>{{ amenagement.lots }}</td>
+                <td>{{ amenagement.services }}</td>
+                <td>{{ amenagement.dateAmenagement ? amenagement.dateAmenagement|date('Y-m-d') : '' }}</td>
+                
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

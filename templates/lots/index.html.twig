@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des lots{% endblock %}
+
+{% block body %}
+    <h1>Liste des lots <a class="btn btn-primary" href="{{ path('lots_new') }}">Ajouter</a></h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Superficie</th>
+                <th>Region</th>
+                <th>Etat</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for lot in lots %}
+            <tr>
+                <td>{{ lot.id }}</td>
+                <td>{{ lot.superficie }}</td>
+                <td>{{ lot.region }}</td>
+                <td>{{ lot.etat }}</td>
+                 <td>
+                    <a  class="btn btn-primary" href="{{ path('lots_edit', {'id': lot.id}) }}">Modifer</a>
+                    
+                    <br><br>
+                    {{ include('lots/_delete_form.html.twig') }} 
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+    {# <a href="{{ path('lots_new') }}">Create new</a> #}
+{% endblock %}

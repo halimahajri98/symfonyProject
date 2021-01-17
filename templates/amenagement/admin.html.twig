@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste Amenagement {% endblock %}
+
+{% block body %}
+<div class="exemple-wrapper">
+    <h1>Liste Amenagement <a  class="btn btn-primary" href="{{ path('amenagement_new') }}">Ajouter</a></h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Lots</th>
+                <th>Services</th>
+                <th>DateAmenagement</th>
+                <th>Actions</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+        {% for amenagement in amenagements %}
+            <tr>
+                <td>{{ amenagement.id }}</td>
+                <td>{{ amenagement.lots }}</td>
+                <td>{{ amenagement.services }}</td>
+                <td>{{ amenagement.dateAmenagement ? amenagement.dateAmenagement|date('Y-m-d') : '' }}</td>
+                <td>
+                    <a  class="btn btn-primary" href="{{ path('amenagement_edit', {'id': amenagement.id}) }}">Modifer</a>
+                    <br><br>
+                    {{ include('amenagement/_delete_form.html.twig') }} 
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

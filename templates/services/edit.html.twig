@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier Services{% endblock %}
+
+{% block body %}
+    <h1>Modifier services</h1>
+
+    {{ include('services/_form.html.twig', {'button_label': 'Enregistrer modifications'}) }}
+
+    
+{% endblock %}
